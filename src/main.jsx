@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import Layout from './components/Layout';
-import NuevoCliente from './pages/NuevoCliente';
+import ClienteNuevo from './pages/ClienteNuevo';
+import Base from './components/Base';
 import Index from './pages/Index';
 
 import './index.css';
@@ -11,10 +11,10 @@ import './index.css';
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Layout />,
+    element: <Base />,
     children: [
-      { index: true, element: <Index /> },
-      { path: '/ruta/secundaria', element: <NuevoCliente /> },
+      { index: true, element: <Index />},
+      { path: '/clientes/nuevo', element: <ClienteNuevo /> },
     ],
   },
 ]);

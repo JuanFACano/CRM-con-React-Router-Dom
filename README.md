@@ -39,7 +39,8 @@ import Index from './pages/Index';
 
 ### 3. Creacion de la variable que contendra nuestras rutas
 
-`const router = createBrowserRouter([
+```
+const router = createBrowserRouter([
   {
     path: '/',
     element: <Layout />,
@@ -48,7 +49,8 @@ import Index from './pages/Index';
       { path: '/ruta/secundaria', element: <NuevoCliente /> },
     ],
   },
-]);`
+]);
+```
 
 ### 4. Agregar el Router Provider
 
@@ -57,3 +59,22 @@ import Index from './pages/Index';
 ### 5. Crear Nuestro Layour
 
       _obviamente si vamos a utilizar nuesto Layout debemos crearlo un ejemplo basico es el que tenemos en la ruta ./src/Layout
+
+---
+
+# Creando El Layout / Base (Actualizado)
+
+1.  Realizamos cambios simples en cuanto a diseño, no se explicará en gran detalle debido a que los conocimientos de HTML, CSS (tailwind) daremos por sentado que ya se tienen
+
+2.  Agregamos una navegación simple para ir de nuestra pagina principal (index.jsx) a nuestra página de Cliente Nuevo; en este navegacion no utilizamos los enlaces directos (<a>Enlace</a>) debido a que RRD nos da un componente conocido como Link (<Link>Super Enlace</Link>) que nos da un mejor rendimiento en cuanto a cambiar de pestaña, para este nuevo componente cambiaremos la etiqueta `href="./ruta"` por un atributo conocido como `to="ruta"`
+
+3.  El siguiente paso fue darle una mejor esperiencia al usuario resaltando el enlace correspondiente a la pagina en la que se encuentra para este caso utilizamos el Hook useloction de RRD que mediante su atributo pathName nos permite saber en que ruta estamos y por consiguiente nos permite validar si estamos en esa ruta tendriamos por ejemplo: el enlace 'Clientes' de un color Azul (text-blue-300/tailwind) de los contrario un color blanco (text-white/tailwind)
+
+
+
+## Actualizaciones / Simples
+
+1. Tuvimos que cambiar el nombre del archivo Layout.jsx a Base.jsx debido a un problema de EsLint
+2. Para mejorar el orden de mis archivos decidi cambiar el nombre de `NuevoCliente` a `ClientesNuevos` para mejorar la nomenclatura
+
+## Actualizaciones / Complejas
