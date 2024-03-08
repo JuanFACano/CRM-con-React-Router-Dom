@@ -1,4 +1,4 @@
-# Creado con Vite
+# Proyecto CRM con React Router Dom
 
 Este repositorio tendra los avances en el curso de React de juan de la torre en base al proyecto de CRM-REACT - en el README dejare un intento de diario en cuanto a progresiones y errores
 
