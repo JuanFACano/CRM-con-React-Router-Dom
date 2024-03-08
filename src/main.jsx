@@ -1,20 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import {
+  createBrowserRouter,
+  RouterProvider,
+  useFormAction,
+} from 'react-router-dom';
 
-import ClienteNuevo from './pages/ClienteNuevo';
+import ClienteNuevo, { action } from './pages/ClienteNuevo';
+import { action as nuevoClienteAction } from './pages/ClienteNuevo';
 import Base from './components/Base';
 import Index, { loader as clientesLoader } from './pages/Index';
 
 import './index.css';
-
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Base />,
     children: [
       { index: true, element: <Index />, loader: clientesLoader },
-      { path: '/clientes/nuevo', element: <ClienteNuevo /> },
+      {
+        path: '/clientes/nuevo',
+        element: <ClienteNuevo />,
+        action: nuevoClienteAction,
+      },
     ],
   },
 ]);
